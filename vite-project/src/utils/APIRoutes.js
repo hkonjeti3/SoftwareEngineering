@@ -1,1 +1,0 @@
-export const host = "https://artgallery-back.onrender.com"

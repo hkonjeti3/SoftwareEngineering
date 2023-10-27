@@ -2,6 +2,8 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios'
 import {Link,useNavigate} from 'react-router-dom'
+import Header from "./Header";
+
 
 function Signup() {
     const [username, setName] = useState()
@@ -25,10 +27,29 @@ function Signup() {
     }
 
     return (
-        <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+        <div><Header />
+        <div className="d-flex justify-content-center align-items-center bg-secondary ">
             <div className="bg-white p-3 rounded ">
                 <h2>Register</h2>
-                <form onSubmit={handleSubmit}> 
+                <form onSubmit={handleSubmit}>
+
+
+                <div className="mb-3">
+                    <label htmlFor="email">
+                        <strong>Email</strong>
+                    </label>
+                    <input 
+                        type="email"
+                        placeholder="Enter Email"
+                        autoComplete="off"
+                        name="email"
+                        id="roundedTB"
+                        className="form-control"
+                        onChange={(e)=> setEmail(e.target.value)}
+                    />
+                </div> 
+
+
                 <div className="mb-3">
                     <label htmlFor="fname">
                         <strong>First Name</strong>
@@ -38,10 +59,12 @@ function Signup() {
                         placeholder="Enter First Name"
                         autoComplete="off"
                         name="fname"
-                        className="form-control rounded-0"
+                        id="roundedTB"
+                        className="form-control"
                         onChange={(e)=> setFName(e.target.value)}
-                    /> 
-                    \
+                    />
+                </div>
+
 
                 <div className="mb-3">
                     <label htmlFor="lname">
@@ -52,36 +75,66 @@ function Signup() {
                         placeholder="Enter Last Name"
                         autoComplete="off"
                         name="lname"
-                        className="form-control rounded-0"
+                        id="roundedTB"
+                        className="form-control"
                         onChange={(e)=> setLName(e.target.value)}
                     />
                 </div>
-                </div>
+
+
                 <div className="mb-3">
                     <label htmlFor="username">
                         <strong>Username</strong>
                     </label>
                     <input 
                         type="text"
-                        placeholder="Enter Username"
+                        placeholder="Enter Name"
                         autoComplete="off"
                         name="username"
-                        className="form-control rounded-0"
+                        id="roundedTB"
+                        className="form-control"
                         onChange={(e)=> setName(e.target.value)}
                     />
                 </div>
+
+
                 <div className="mb-3">
-                    <label htmlFor="email">
-                        <strong>Email</strong>
+                    <label htmlFor="age">
+                        <strong>Age</strong>
                     </label>
                     <input 
-                        type="email"
-                        placeholder="Enter Email"
+                        type="number"
+                        placeholder="Enter age"
                         autoComplete="off"
-                        name="email"
-                        className="form-control rounded-0"
-                        onChange={(e)=> setEmail(e.target.value)}
+                        name="age"
+                        id="roundedTB"
+                        className="form-control"
+                        onChange={(e)=> setAge(e.target.value)}
                     />
+                    {/* do we need an age thing? */}
+
+                <div><br></br></div>
+                <div onChange={(e)=> setRole(e.target.value)}>
+                    <div><strong>Role</strong></div>
+                    <input type="radio" value="User" id="accent" name="role"/> 
+                    <label htmlFor="User">User</label>
+                    &emsp;
+                    <input type="radio" value="Venue Owner" id="accent" name="role"/>
+                    <label htmlFor="Venue Owner">Venue Owner</label>
+                </div>
+
+
+                <div onChange={(e)=> setGender(e.target.value)}>
+                    <div><strong>Gender</strong></div>
+                    <input type="radio" value="Male" id="accent" name="Gender"/> < label htmlFor="Male">Male</label>
+                    &emsp;
+                    <input type="radio" value="Female" id="accent" name="Gender"/> < label htmlFor="Female">Female</label>
+                    &emsp;
+                    <input type="radio" value="Other" id="accent" name="Gender"/> < label htmlFor="Other">Other</label>
+                </div>
+
+
+
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password">
@@ -92,43 +145,28 @@ function Signup() {
                         placeholder="Enter Password"
                         autoComplete="off"
                         name="password"
-                        className="form-control rounded-0"
+                        id="roundedTB"
+                        className="form-control"
                         onChange={(e)=> setPassword(e.target.value)}
                     />
-                </div>
-                <div onChange={(e)=> setRole(e.target.value)}>
-                    <input type="radio" value="User" name="role"/> User
-                    <input type="radio" value="Venue Owner" name="role"/> Venue Owner
-                </div>
-                <div onChange={(e)=> setGender(e.target.value)}>
-                    <input type="radio" value="Male" name="gender"/> Male
-                    <input type="radio" value="Female" name="gender"/> Female
-                    <input type="radio" value="Other" name="gender"/> Other
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="age">
-                        <strong>Age</strong>
-                    </label>
-                    <input 
-                        type="age"
-                        placeholder="Enter Age"
-                        autoComplete="off"
-                        name="age"
-                        className="form-control rounded-0"
-                        onChange={(e)=> setAge(e.target.value)}
-                    />
-                </div>
-                <button type="submit" className="btn btn-success w-100 rounded-0">
-                    Register
-                </button>
-                <p>Already have an account</p>
-                <Link to="/login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-                    Login
-                </Link>
+                </div>  
 
+            
+                    <div class="button-center">
+                        <button class="button main-btn">Register</button>
+                    </div>
+
+
+                <div className="mb-3">Already have an account?
+                <Link to="/login">
+                    <p>Login</p>
+                </Link></div>
                 </form>
+
+
             </div>
         </div>
+    </div>
     );
 }
 

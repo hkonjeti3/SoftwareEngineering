@@ -5,6 +5,8 @@ import Login from "./pages/login";
 import Home from './pages/Home'
 import Dashboard from "./pages/Dashboard";
 import Forgot from "./pages/forgot";
+import VenueDashboard from "./pages/VenueDashboard";
+import Header from "./pages/Header";
 import axios from 'axios'
 
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/forgot" element={<Forgot/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/" element={<Home/>}></Route>
+        <Route path="/venuedashboard" element={<VenueDashboard/>}></Route>
+        
       </Routes>
        
       
