@@ -11,7 +11,7 @@ export default function VenueDashboard() {
                     setSearchResult([])
                     return
                 }
-                const res = await axios.get('https://testing-server-378x.onrender.com/VenueDashboard', {params: {key: key, limit: 5}})
+                const res = await axios.get('https://se-hkonjeti.onrender.com/VenueDashboard', {params: {key: key, limit: 5}})
                 setSearchResult(res.data.data)
                 console.log(res)
             } catch (error) {

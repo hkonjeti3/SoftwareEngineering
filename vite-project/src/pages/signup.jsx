@@ -20,7 +20,7 @@ function Signup() {
     const handleSubmit=(e)=>{
         e.preventDefault()
         console.log(username,email)
-        axios.post('https://new-server-cvbw.onrender.com/register',{username,email,password, fname, lname, role, gender, age})
+        axios.post('https://se-hkonjeti.onrender.com/register',{username,email,password, fname, lname, role, gender, age})
         .then(res=>{
             navigate('/login')
         }).catch(err=>console.log(err))

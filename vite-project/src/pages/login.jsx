@@ -14,7 +14,7 @@ function Login() {
     axios.defaults.withCredentials = true;
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('https://new-server-cvbw.onrender.com/login',{email,password})
+        axios.post('https://se-hkonjeti.onrender.com/login',{email,password})
         .then(res=>{
             if(res.data.Status==="Success"){
                 if(res.data.role==="user"){
